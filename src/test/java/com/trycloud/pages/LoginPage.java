@@ -36,6 +36,9 @@ public class LoginPage extends BasePage  {
     @FindBy(id = "reset-password-submit")
     public WebElement resetPassword;
 
+    @FindBy(xpath = "//button[@class='settings-button']")
+    public WebElement settingsButton;
+
     public  void login(String username, String password){
 
         inputUsername.sendKeys(username);

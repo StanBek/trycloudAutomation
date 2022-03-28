@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 
 public class Files_StepDefinitions extends FilesPage {
     String expectedText;
-
     FilesPage filesPage = new FilesPage();
 
     public void userOnTheLoginPage() {

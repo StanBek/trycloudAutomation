@@ -29,5 +29,13 @@ public class FilesPage extends LoginPage {
     @FindBy(xpath = "(//div[@class='message'])[2]")
     public WebElement messageText;
 
+    @FindBy(xpath = "//span[@class='icon icon-add']")
+    public WebElement buttonNew;
+
+    @FindBy(xpath = "//label[@class='menuitem']")
+    public WebElement uploadFileButton;
+
+    @FindBy(xpath = "//p[.='0 B used']")
+    public WebElement storageUsage;
 
 }
