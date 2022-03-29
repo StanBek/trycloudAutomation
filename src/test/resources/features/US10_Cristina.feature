@@ -8,6 +8,7 @@ Feature: As a user, I should be able to update settings.
 
 
 
+
   Scenario: Verify users to see the app storage usage
     Given user on the dashboard page
     When the user clicks the "Files" module

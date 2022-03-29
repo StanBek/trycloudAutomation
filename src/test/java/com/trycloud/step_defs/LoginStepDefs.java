@@ -37,36 +37,4 @@ public class LoginStepDefs extends LoginPage {
     }
 
 
-    @Given("user on the dashboard page")
-    public void userOnTheDashboardPage() {
-
-    }
-
-    @When("the user clicks the {string} module")
-    public void theUserClicksTheModule(String arg0) {
-    }
-
-    @And("user clicks Settings on the left bottom corner")
-    public void userClicksSettingsOnTheLeftBottomCorner() {
-    }
-
-    @Then("the user should be able to click any buttons")
-    public void theUserShouldBeAbleToClickAnyButtons() {
-    }
-
-    @And("user checks the current storage usage")
-    public void userChecksTheCurrentStorageUsage() {
-    }
-
-    @And("user uploads file with the upload file option")
-    public void userUploadsFileWithTheUploadFileOption() {
-    }
-
-    @And("user refresh the page")
-    public void userRefreshThePage() {
-    }
-
-    @Then("the user should be able to see storage usage is increased")
-    public void theUserShouldBeAbleToSeeStorageUsageIsIncreased() {
-    }
 }
