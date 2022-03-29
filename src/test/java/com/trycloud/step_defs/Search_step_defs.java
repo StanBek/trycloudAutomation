@@ -20,7 +20,7 @@ public class Search_step_defs extends SearchPage {
 
     @When("enter credentials username {string} and passcode {string}, user on the dashboard page")
     public void enterCredentialsUsernameAndPasscodeUserOnTheDashboardPage(String username, String password) {
-       login(username,password);
+        login(username, password);
     }
 
     @Given("user  clicks the magnifier icon on the right top")
@@ -30,12 +30,15 @@ public class Search_step_defs extends SearchPage {
     }
 
     @And("Search any existing file or folder or user name and verify the app displays the expected result option")
-    public void searchAnyExistingFileOrFolderOrUserNameAndVerifyTheAppDisplaysTheExpectedResultOption(Map<String,String> nameOfValue) {
-            searchInputBox.sendKeys(nameOfValue.get("nameOfValue"));
-            expectedResult = nameOfValue.get("nameOfValue");
+    public void searchAnyExistingFileOrFolderOrUserNameAndVerifyTheAppDisplaysTheExpectedResultOption(Map<String, String> nameOfValue) {
+        for (String value : nameOfValue.values()) {
+            searchInputBox.sendKeys(value);
             String actualResult = searchResult.getText();
             System.out.println("actualResult = " + actualResult);
-            Assert.assertTrue(expectedResult.equals(actualResult));
+            Assert.assertTrue(value.equals(actualResult));
+            resetButton.click();
+        }
+
 
     }
 
