@@ -36,6 +36,8 @@ public class LoginPage extends BasePage  {
     @FindBy(id = "reset-password-submit")
     public WebElement resetPassword;
 
+
+
     public  void login(String username, String password){
 
         inputUsername.sendKeys(username);
