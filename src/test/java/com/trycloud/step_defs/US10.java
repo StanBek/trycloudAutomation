@@ -17,11 +17,9 @@ public class US10 extends LoginPage {
     FilesPage filesPage = new FilesPage();
 
 
-
-
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
-    dashboard.click();
+        dashboard.click();
 
     }
 
@@ -43,7 +41,7 @@ public class US10 extends LoginPage {
 
         BrowserUtils.sleep(4);
 
-        Assert.assertTrue( filesPage.settingOptions.isSelected());
+        Assert.assertTrue(filesPage.settingOptions.isSelected());
 
     }
 
@@ -62,9 +60,15 @@ public class US10 extends LoginPage {
 
     @And("user refresh the page")
     public void userRefreshThePage() {
+        Driver.getDriver().navigate().refresh();
+        BrowserUtils.sleep(3);
+
     }
 
     @Then("the user should be able to see storage usage is increased")
-    public void theUserShouldBeAbleToSeeStorageUsageIsIncreased() {
+    public void theUserShouldBeAbleToSeeStorageUsageIsIncreased(){
+
     }
 }
+
+
