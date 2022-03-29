@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class US10 extends LoginPage {
@@ -55,7 +56,8 @@ public class US10 extends LoginPage {
 
     @And("user uploads file with the upload file option")
     public void userUploadsFileWithTheUploadFileOption() {
-        WebElement fileUpload = Driver.getDriver().findElement(By.id)
+        WebElement fileUpload = Driver.getDriver().findElement(By.id("//*[@id=\"controls\"]/div[2]/div[2]/ul/li[1]/label/span[2]"));
+
     }
 
     @And("user refresh the page")
