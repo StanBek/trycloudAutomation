@@ -1,6 +1,6 @@
 
 Feature: As a user, I should be able to update settings.
-
+  @settings
   Scenario Outline: Verify users update settings
     Given user on the login page
     When user insert "<username>" and "<password>"
@@ -15,7 +15,7 @@ Feature: As a user, I should be able to update settings.
       | User83   | Userpass123 |
       | User113  | Userpass123 |
 
-  @settings
+
   Scenario Outline: Verify users to see the app storage usage Given user on the dashboard page
     Given user on the login page
     When user insert "<username>" and "<password>"

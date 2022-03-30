@@ -33,8 +33,13 @@ public class SettingPage_JackPractice_StepDef extends FilesPage {
     public void the_user_should_be_able_to_click_any_buttons() {
 
         settingPage_jackPractice.recommendationsEnabledToggle.click();
+        settingPage_jackPractice.recommendationsEnabledToggle.isSelected();
+
         settingPage_jackPractice.showHiddenGilesToggle.click();
+        settingPage_jackPractice.showHiddenGilesToggle.isSelected();
+
         settingPage_jackPractice.showRichWorkspaces.click();
+        settingPage_jackPractice.showRichWorkspaces.isSelected();
     }
 
     @When("user checks the current storage usage")
