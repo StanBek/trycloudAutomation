@@ -45,7 +45,6 @@ public class Comments_StepDefinitions extends FilesPage {
     @When("user click the submit button to post it")
     public void user_click_the_submit_button_to_post_it() {
         filesPage.submitButton.click();
-
     }
 
     @Then("Verify the comment is displayed in the comment section.")
