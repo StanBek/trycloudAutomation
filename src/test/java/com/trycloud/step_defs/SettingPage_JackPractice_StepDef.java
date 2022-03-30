@@ -2,9 +2,14 @@ package com.trycloud.step_defs;
 
 import com.trycloud.pages.FilesPage;
 import com.trycloud.pages.SettingPage_JackPractice;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 
 
 public class SettingPage_JackPractice_StepDef extends FilesPage {
@@ -39,18 +44,46 @@ public class SettingPage_JackPractice_StepDef extends FilesPage {
     }
 
     @When("user uploads file with the upload file option")
-    public void user_uploads_file_with_the_upload_file_option() throws InterruptedException {
+    public void user_uploads_file_with_the_upload_file_option(){
         filesPage.buttonNew.click();
         uploadFileButton.click();
-        uploadFileButton.sendKeys("/Users/maglovanyi/Desktop/School/SoftSkills/TryCloud/tryCloud.png");
 
-        Thread.sleep(1000);
+        //Use of Robot class to upload class
+        Robot robot = null;
+
+        try{
+            robot =new Robot();
+
+        }catch (AWTException e){
+            e.printStackTrace();
+        }
+
+        String path="/Users/maglovanyi/Desktop/School/SoftSkills/TryCloud.png";
+
+        //Store the path of the file to be uploaded using StringSelection class object
+        StringSelection filepath = new StringSelection(path);
+
+        //Copy above path to clipboard
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath,null);
+
+        //Now press CTRL+V
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+
+        //Release CTRL+V
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        //Press Enter -> Release Enter
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
     }
 
     @When("user refresh the page")
     public void user_refresh_the_page() throws InterruptedException {
         Driver.getDriver().navigate().refresh();
-        Thread.sleep(1000);
+        BrowserUtils.sleep(2);
     }
 
     @Then("the user should be able to see storage usage is increased")
