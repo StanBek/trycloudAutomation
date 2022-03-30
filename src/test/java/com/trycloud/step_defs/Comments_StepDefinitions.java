@@ -1,12 +1,15 @@
 package com.trycloud.step_defs;
+
 import com.trycloud.pages.FilesPage;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
-public class Files_StepDefinitions extends FilesPage {
+public class Comments_StepDefinitions extends FilesPage {
     String expectedText;
     FilesPage filesPage = new FilesPage();
 
@@ -49,9 +52,9 @@ public class Files_StepDefinitions extends FilesPage {
     public void verify_the_comment_is_displayed_in_the_comment_section() {
 
         Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).isDisplayed();
-        System.out.println("Driver.getDriver().findElement(By.xpath(\"//*[@id=\\\"commentsTabView\\\"]/ul/li[1]/div[2]\")).getText() = "
-                + Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).getText());
 
+        String actualMessage = Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).getText();
+        Assert.assertEquals(expectedText, actualMessage);
 
     }
 
