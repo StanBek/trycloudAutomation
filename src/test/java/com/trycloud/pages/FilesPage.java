@@ -16,6 +16,8 @@ public class FilesPage {
     public WebElement settingOptions;
     @FindBy(xpath = "//a[@class='icon-quota svg']/p")
     public WebElement usedStorageParagraph;
-    @FindBy(xpath = "//*[@id=\"controls\"]/div[2]/div[2]/ul/li[1]/label/span[2]")
+    @FindBy(xpath = "//span[@class='icon icon-add']")
     public WebElement uploadBtn;
+    @FindBy(xpath = "//span[.='Upload file']")
+    public WebElement uploadFile;
 }

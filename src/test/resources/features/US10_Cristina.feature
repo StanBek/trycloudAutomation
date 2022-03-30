@@ -1,5 +1,8 @@
+
 Feature: As a user, I should be able to update settings.
 
+  Background: user on the login page
+    Given user enter the username and password
   Scenario: Verify users update settings
     Given user on the dashboard page
     When the user clicks the "Files" module
@@ -8,7 +11,7 @@ Feature: As a user, I should be able to update settings.
 
 
 
-
+@wip
   Scenario: Verify users to see the app storage usage
     Given user on the dashboard page
     When the user clicks the "Files" module
