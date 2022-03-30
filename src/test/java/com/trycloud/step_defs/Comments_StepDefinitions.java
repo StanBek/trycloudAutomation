@@ -1,6 +1,7 @@
 package com.trycloud.step_defs;
 
 import com.trycloud.pages.FilesPage;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
@@ -31,6 +32,7 @@ public class Comments_StepDefinitions extends FilesPage {
     public void user_click_action_icon_from_any_file_on_the_page_and_user_choose_the_option(String string) {
         filesPage.action_icon.click();
         filesPage.detailsButton.click();
+        BrowserUtils.sleep(1);
     }
 
     @When("user write a comment inside the input box")
@@ -39,19 +41,22 @@ public class Comments_StepDefinitions extends FilesPage {
 
         expectedText = "Wooden Spoon";
         filesPage.commentsBox.sendKeys(expectedText);
+        BrowserUtils.sleep(1);
 
     }
 
     @When("user click the submit button to post it")
     public void user_click_the_submit_button_to_post_it() {
         filesPage.submitButton.click();
+        BrowserUtils.sleep(1);
     }
 
     @Then("Verify the comment is displayed in the comment section.")
     public void verify_the_comment_is_displayed_in_the_comment_section() {
 
-        Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).isDisplayed();
 
+        Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).isDisplayed();
+        BrowserUtils.sleep(1);
         String actualMessage = Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).getText();
         Assert.assertEquals(expectedText, actualMessage);
 
