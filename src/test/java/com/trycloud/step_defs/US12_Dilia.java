@@ -8,18 +8,22 @@ import org.junit.Assert;
 
 public class US12_Dilia extends LoginPage {
 
-    @Given("user on the dashboard page")
-    public void user_on_the_dashboard_page() {
-        dashboard.click();
-    }
+
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String string) {
-        contacts.click();
+        talk.click();
     }
     @Then("verify the page title is {string}")
-    public void verify_the_page_title_is(String string) {
+    public void verify_the_page_title_is(String name) {
+    String expectedResult = name;
+        System.out.println("expectedResult = " + expectedResult);
+        String actualResult = talk.getText();
+        System.out.println("actualResult = " + actualResult);
 
+        Assert.assertTrue(expectedResult.contains(actualResult));
     }
+
+
 
 
 }
