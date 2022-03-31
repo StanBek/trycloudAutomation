@@ -7,6 +7,4 @@ Feature: Story: As a user, I should be able to access to Contacts module.
     When user use username "username" and passcode "password"
     And user click the login button
     When the user clicks the "Talk" module
-    Then verify the page title is "Trycloud"
-
-
+    Then verify the page title is "Talk - Trycloud"
