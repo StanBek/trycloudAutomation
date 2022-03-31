@@ -41,10 +41,5 @@ public class US05StepDef extends US05Page {
     public void userClickTheSubModuleOnTheLeftSideThenVerifyTheChosenFileIsListedOnTheTable(String arg0) {
         clickTheSubModuleOnTheLeftSide.click();
         Assert.assertTrue(Talk.isDisplayed());
-
-
-
-
-
     }
 }
