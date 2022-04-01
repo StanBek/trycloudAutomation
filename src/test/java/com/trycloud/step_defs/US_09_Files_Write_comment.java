@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Comments_StepDefinitions extends FilesPage {
+public class US_09_Files_Write_comment extends FilesPage {
     String expectedText;
     FilesPage filesPage = new FilesPage();
 
@@ -35,12 +35,10 @@ public class Comments_StepDefinitions extends FilesPage {
         BrowserUtils.sleep(1);
     }
 
-    @When("user write a comment inside the input box")
-    public void user_write_a_comment_inside_the_input_box() {
+    @When("user write a {string} comment inside the input box")
+    public void user_write_a_comment_inside_the_input_box(String message) {
         filesPage.commentsButton.click();
-
-        expectedText = "Wooden Spoon";
-        filesPage.commentsBox.sendKeys(expectedText);
+        filesPage.commentsBox.sendKeys(message);
         BrowserUtils.sleep(1);
 
     }
@@ -51,14 +49,11 @@ public class Comments_StepDefinitions extends FilesPage {
         BrowserUtils.sleep(1);
     }
 
-    @Then("Verify the comment is displayed in the comment section.")
-    public void verify_the_comment_is_displayed_in_the_comment_section() {
-
-
-        Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).isDisplayed();
-        BrowserUtils.sleep(1);
-        String actualMessage = Driver.getDriver().findElement(By.xpath("//*[@id=\"commentsTabView\"]/ul/li[1]/div[2]")).getText();
-        Assert.assertEquals(expectedText, actualMessage);
+    @Then("Verify the {string} comment is displayed in the comment section")
+    public void verify_the_comment_is_displayed_in_the_comment_section(String message) {
+        WebElement element = Driver.getDriver().findElement(By.xpath("//*[.='"+message+"']"));
+        BrowserUtils.highlight(element);
+        Assert.assertTrue(element.isDisplayed());
 
     }
 
