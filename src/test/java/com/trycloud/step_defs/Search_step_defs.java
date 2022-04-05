@@ -36,9 +36,6 @@ public class Search_step_defs extends SearchPage {
     public void searchAnyExistingFileOrFolderOrUserNameAndVerifyTheAppDisplaysTheExpectedResultOption(String expectedResult, String expectedResult1, DataTable table) {
         searchInputBox.sendKeys(table.asList().get(0));
         String actualResult = searchResult.getText();
-//            System.out.println("get text - " + searchResult.getText());
-//            System.out.println("actual result - " + actualResult);
-//            System.out.println("actualResult = " + actualResult);
         BrowserUtils.waitFor(2);
         Assert.assertTrue(expectedResult.contains(actualResult));
         resetButton.click();
