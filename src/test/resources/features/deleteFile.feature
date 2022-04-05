@@ -1,3 +1,4 @@
+@wip
 Feature: As a user, I should be able to delete a file/folder.
 
   User Story: As a user, I should be able to delete a file/folder.

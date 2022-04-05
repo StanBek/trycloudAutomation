@@ -28,11 +28,11 @@ public class DeleteFile_StepDefs extends BasePage {
     }
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String moduleName) {
-        clickModule(moduleName);
+            clickModule(moduleName);
     }
     @When("user click action-icon from any file on the page")
     public void user_click_action_icon_from_any_file_on_the_page() {
-        BrowserUtils.sleep(10);
+
             filePage_kaloyan.actionBtn.click();
             deletedItemText = filePage_kaloyan.deletedItem.getText();
     }
@@ -54,6 +54,7 @@ public class DeleteFile_StepDefs extends BasePage {
 
 
     }
+
     @Then("Verify the deleted file is displayed on the page")
     public void verify_the_deleted_file_is_displayed_on_the_page() {
 

@@ -95,12 +95,8 @@ public abstract class BasePage {
 
     public void clickModule(String moduleName) {
         String locator = "//ul[@id='appmenu']//span[normalize-space(.)='"+moduleName+"']/..";
-
-//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
-//        wait.until(ExpectedConditions.visibilityOf(files));
         Driver.getDriver().findElement(By.xpath(locator)).click();
-//        Actions actions = new Actions(Driver.getDriver());
-//        actions.moveToElement(module).perform();
+
 
     }
 
