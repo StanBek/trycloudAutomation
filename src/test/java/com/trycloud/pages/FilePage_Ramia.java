@@ -40,22 +40,23 @@ public class FilePage_Ramia {
    @FindBy(xpath = "//span[@class='innernametext' and .='Talk']")
    public WebElement folderName;
 
+  @FindBy(xpath = "//span[@class='icon icon-add']")
+    public WebElement addBtn;
 
-   public void clickAllActions(List<WebElement> allActions){
-       WebDriverWait wait=new WebDriverWait(Driver.getDriver(),5);
-       for (WebElement eachAction : allActions) {
-           wait.until(ExpectedConditions.visibilityOf(firstActionButton));
-           eachAction.click();
-           Driver.getDriver().navigate().back();
-           return;
+  @FindBy(xpath = "//span[text()='Upload file']")
+    public WebElement uploadFile;
 
-       }
+    @FindBy(xpath = "//span[@class='innernametext' and .='butterfly']")
+    public WebElement uploadedFolderName;
+
+
+
 
    }
 
 
 
-    }
+
 
 
 
