@@ -40,12 +40,23 @@ public class FilePage_Ramia {
 
    public void clickAction(List<WebElement> allActions){
       for (WebElement eachAction : allActions) {
-            eachAction.click();
           WebDriverWait wait=new WebDriverWait(Driver.getDriver(),5);
           wait.until(ExpectedConditions.visibilityOf(eachAction));
+          eachAction.click();
+          Driver.getDriver().navigate().back();
+            return;
 
       }
 
+   }
+   public void clickAllRemoveFromFavorite(List<WebElement> allActions){
+       for (WebElement eachAction : allActions) {
+           eachAction.click();
+           BrowserUtils.waitFor(3);
+       }
+       Assert.assertTrue(removeFromFavorite.isDisplayed());
+
+       return;
    }
 
 
