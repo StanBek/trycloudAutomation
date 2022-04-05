@@ -19,7 +19,7 @@ public class FilePage_Ramia {
    }
 
 
-   @FindBy(xpath = "//a[@class='action action-menu permanent']")
+   @FindBy(xpath = "//span[@class='fileactions']/a/span[@class='icon icon-more']")
   public List<WebElement> allActionButton;
 
     @FindBy(xpath = "//tbody/tr[1]//a[@class='action action-menu permanent']")
@@ -37,32 +37,29 @@ public class FilePage_Ramia {
    @FindBy(xpath = "//span[@class='innernametext']")
    public List<WebElement> allFavoriteList;
 
+   @FindBy(xpath = "//span[@class='innernametext' and .='Talk']")
+   public WebElement folderName;
 
-   public void clickAction(List<WebElement> allActions){
-      for (WebElement eachAction : allActions) {
-          WebDriverWait wait=new WebDriverWait(Driver.getDriver(),5);
-          wait.until(ExpectedConditions.visibilityOf(eachAction));
-          eachAction.click();
-          Driver.getDriver().navigate().back();
-            return;
 
-      }
-
-   }
-   public void clickAllRemoveFromFavorite(List<WebElement> allActions){
+   public void clickAllActions(List<WebElement> allActions){
+       WebDriverWait wait=new WebDriverWait(Driver.getDriver(),5);
        for (WebElement eachAction : allActions) {
+           wait.until(ExpectedConditions.visibilityOf(firstActionButton));
            eachAction.click();
-           BrowserUtils.waitFor(3);
-       }
-       Assert.assertTrue(removeFromFavorite.isDisplayed());
+           Driver.getDriver().navigate().back();
+           return;
 
-       return;
+       }
+
    }
 
 
 
+    }
 
 
 
 
-}
+
+
+

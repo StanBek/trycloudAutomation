@@ -31,17 +31,26 @@ public class RemoveFromFavorite_stepDefinition extends LoginPage {
     }
     @When("the users click action-icon from any file on the page to remove")
     public void the_users_click_action_icon_from_any_file_on_the_page_to_remove() {
-        file.clickAction(file.allActionButton);
+      file.firstActionButton.click();
+      BrowserUtils.waitFor(5);
+
 
     }
     @When("user choose the {string} option")
-    public void user_choose_the_option(String string) {
-  //  file.clickAllRemoveFromFavorite(file.allActionButton);
+    public void user_choose_the_option(String expected) {
+
+            String actual=file.removeFromFavorite.getText();
+            Assert.assertEquals(actual,expected);
+            file.removeFromFavorite.click();
+
+
+
 
     }
     @When("user click the {string} sub-module on the left side")
     public void user_click_the_sub_module_on_the_left_side(String string) {
-       // file.favoriteSubModule.click();
+        file.favoriteSubModule.click();
+        BrowserUtils.waitFor(3);
 
 
 
@@ -49,6 +58,7 @@ public class RemoveFromFavorite_stepDefinition extends LoginPage {
     }
     @Then("Verify that the file is removed from the Favorites sub-module’s table")
     public void verify_that_the_file_is_removed_from_the_favorites_sub_module_s_table() {
+    Assert.assertFalse(file.folderName.isDisplayed());
 
 
     }
