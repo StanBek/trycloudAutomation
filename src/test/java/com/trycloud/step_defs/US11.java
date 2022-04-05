@@ -1,5 +1,6 @@
 package com.trycloud.step_defs;
 
+import com.trycloud.pages.DashboardPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +9,7 @@ public class US11 {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
+        DashboardPage dashboardPage=new DashboardPage();
     }
 
     @When("the user clicks the Talk Module")
