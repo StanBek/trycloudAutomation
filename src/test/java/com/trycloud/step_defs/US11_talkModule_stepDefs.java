@@ -1,6 +1,5 @@
 package com.trycloud.step_defs;
 
-import com.trycloud.pages.DashboardPage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
@@ -9,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US11 extends LoginPage {
+public class US11_talkModule_stepDefs extends LoginPage {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
