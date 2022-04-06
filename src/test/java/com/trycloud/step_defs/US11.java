@@ -13,8 +13,8 @@ public class US11 extends LoginPage {
 
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String string) {
-
         talk.click();
+        BrowserUtils.sleep(2);
     }
 
     @Then("the user sees the page title {string}")
