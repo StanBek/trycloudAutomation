@@ -1,5 +1,4 @@
 package com.trycloud.step_defs;
-
 import com.trycloud.pages.FilesPage;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
