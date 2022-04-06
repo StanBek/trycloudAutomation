@@ -17,9 +17,9 @@ public class US11_talk_module_step_defs extends TalkPage {
 
     @Given("user is on the Dashboard page")
     public void user_is_on_the_dashboard_page() {
-            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        new LoginPage().login(ConfigurationReader.getProperty("username2"),ConfigurationReader.getProperty("password"));
-
+      //  Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+      //  new LoginPage().login(ConfigurationReader.getProperty("username2"),ConfigurationReader.getProperty("password"));
+        dashboard.click();
     }
 
     @When("the user clicks the {string} module")
