@@ -18,9 +18,9 @@ public class US11 extends LoginPage {
     }
 
     @Then("the user sees the page title {string}")
-    public void the_user_sees_the_page_title(String string) {
+    public void the_user_sees_the_page_title(String title) {
         BrowserUtils.sleep(2);
-        String expectedTitle = "Talk - TryCloud";
+        String expectedTitle = title;
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }
