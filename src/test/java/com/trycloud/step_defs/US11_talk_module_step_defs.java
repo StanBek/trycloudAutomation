@@ -8,6 +8,7 @@ import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US11_talk_module_step_defs extends BasePage {
 
@@ -17,14 +18,18 @@ public class US11_talk_module_step_defs extends BasePage {
         new LoginPage().login(ConfigurationReader.getProperty("username1"),ConfigurationReader.getProperty("password"));
 
     }
-    @When("the user clicks the Talk module")
+    @When("the user clicks the {string} module")
     public void the_user_clicks_the_talk_module() {
         BrowserUtils.waitForVisibility(talk, 2);
         talk.click();
 
     }
     @Then("verify the title is {string}")
-    public void verify_the_title_is(String string) {
+    public void verify_the_title_is(String titleName) {
+        String expectedTitle = titleName;
+        String actualTitle = Driver.getDriver().getTitle();
+        BrowserUtils.sleep(2);
+        Assert.assertEquals(expectedTitle, actualTitle);
 
     }
 
