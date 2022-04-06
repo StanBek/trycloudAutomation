@@ -1,6 +1,7 @@
 Feature: As a user I should be able to access the Talk Module
 
   Background:
+
     Given user is on the dashboard page
     @wip
     Scenario:Verify that user can access Talks Module
