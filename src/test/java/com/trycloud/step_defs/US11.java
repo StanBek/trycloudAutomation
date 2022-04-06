@@ -1,11 +1,12 @@
 package com.trycloud.step_defs;
 
 import com.trycloud.pages.DashboardPage;
+import com.trycloud.pages.FilesPageUS11;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class US11 {
+public class US11 extends FilesPageUS11 {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
