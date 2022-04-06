@@ -11,8 +11,14 @@ import org.junit.Assert;
 
 public class US11 extends LoginPage {
 
+    @Given("user on the dashboard page")
+    public void user_on_the_dashboard_page() {
+        dashboard.click();
+        BrowserUtils.sleep(2);
+    }
+
     @When("the user clicks the {string} module")
-    public void the_user_clicks_the_module(String string) {
+    public void the_user_clicks_the_module(String arg) {
         talk.click();
         BrowserUtils.sleep(2);
     }
