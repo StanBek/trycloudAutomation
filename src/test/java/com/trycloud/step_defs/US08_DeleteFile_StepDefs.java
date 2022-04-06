@@ -9,13 +9,12 @@ import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DeleteFile_StepDefs extends BasePage {
+import javax.sql.rowset.BaseRowSet;
+
+public class US08_DeleteFile_StepDefs extends BasePage {
 
     FilePage_Kaloyan filePage_kaloyan = new FilePage_Kaloyan();
     String deletedItemText;
@@ -35,6 +34,7 @@ public class DeleteFile_StepDefs extends BasePage {
 
             filePage_kaloyan.actionBtn.click();
             deletedItemText = filePage_kaloyan.deletedItem.getText();
+        //System.out.println(deletedItemText);
     }
 
     @When("user choose the {string} option")
@@ -51,12 +51,16 @@ public class DeleteFile_StepDefs extends BasePage {
                 break;
             }
         }
-
-
     }
 
     @Then("Verify the deleted file is displayed on the page")
     public void verify_the_deleted_file_is_displayed_on_the_page() {
+
+        String fileBeforeDelete = deletedItemText;
+        BrowserUtils.sleep(3);
+        String sameFileShownInDeletedFiles = filePage_kaloyan.deletedFileList
+                .get(filePage_kaloyan.deletedFileList.size()-1).getText();
+        Assert.assertEquals(fileBeforeDelete, sameFileShownInDeletedFiles);
 
     }
 
