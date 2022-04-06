@@ -11,8 +11,8 @@ import org.junit.Assert;
 
 public class US11 extends LoginPage {
 
-    @Given("user on the dashboard page")
-    public void user_on_the_dashboard_page() {
+    @Given("user is on the dashboard page")
+    public void user_is_on_the_dashboard_page() {
         dashboard.isDisplayed();
         BrowserUtils.sleep(2);
     }
