@@ -12,8 +12,6 @@ Feature: As a user, I should be able to log in.
       | user99 | Userpass123 |
 
 
-
-
   Scenario:
 
     Given user on the login page
