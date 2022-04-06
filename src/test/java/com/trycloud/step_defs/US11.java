@@ -13,7 +13,7 @@ public class US11 extends LoginPage {
 
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
-        dashboard.click();
+        dashboard.isDisplayed();
         BrowserUtils.sleep(2);
     }
 
