@@ -33,5 +33,8 @@ public class FilePage_Kaloyan {
 
     @FindBy(xpath = "//tr[1]//span[@class='innernametext']")
     public WebElement deletedItem;
+
+    @FindBy(xpath = "//a[@class='name']//span[@class='innernametext']")
+    public List<WebElement> deletedFileList;
 }
 
