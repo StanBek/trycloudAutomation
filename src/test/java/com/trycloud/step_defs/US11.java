@@ -17,7 +17,8 @@ public class US11 extends LoginPage {
     }
 
     @When("the user clicks the {string} module")
-    public void the_user_clicks_the_module(String) {
+    public void the_user_clicks_the_module(String string) {
+
         talk.click();
     }
 
