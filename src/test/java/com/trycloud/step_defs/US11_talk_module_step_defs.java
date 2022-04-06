@@ -10,7 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US11_talk_module_step_defs extends BasePage {
+public class US11_talk_module_step_defs extends LoginPage {
 
     @Given("user is on the Dashboard page")
     public void user_is_on_the_dashboard_page() {
