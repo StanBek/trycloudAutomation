@@ -14,16 +14,18 @@ public class US11_talk_module_step_defs extends BasePage {
 
     @Given("user is on the Dashboard page")
     public void user_is_on_the_dashboard_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url2"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("http://qa2.trycloud.net/"));
         new LoginPage().login(ConfigurationReader.getProperty("username2"),ConfigurationReader.getProperty("password"));
 
     }
+
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_talk_module(String string) {
-        BrowserUtils.waitForVisibility(talk, 2);
+        BrowserUtils.waitForVisibility(talk, 3);
         talk.click();
 
     }
+
     @Then("verify the title is {string}")
     public void verify_the_title_is(String titleName) {
         String expectedTitle = titleName;
