@@ -2,7 +2,7 @@ Feature: As a user I should be able to access the Talk Module
 
   Background:
     Given user is on the dashboard page
-
+    @wip
     Scenario:Verify that user can access Talks Module
     When the user clicks the Talk Module
       Then the user sees the page title "Talk - TryCloud"
