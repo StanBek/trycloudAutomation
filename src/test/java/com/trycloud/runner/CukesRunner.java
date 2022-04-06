@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         glue = "com/trycloud/step_defs",
         dryRun = false,
         tags="@wip",
-        publish = true
+        publish = false
 )
 public class CukesRunner {
 }
