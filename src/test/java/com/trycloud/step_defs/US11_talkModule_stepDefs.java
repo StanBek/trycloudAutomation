@@ -1,33 +1,39 @@
 package com.trycloud.step_defs;
 
+import com.trycloud.pages.BasePage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.BrowserUtils;
+import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.logging.Log;
 import org.junit.Assert;
 
-public class US11_talkModule_stepDefs extends LoginPage {
+public class US11_talkModule_stepDefs extends BasePage {
+    LoginPage login = new LoginPage();
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
-        dashboard.isDisplayed();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        login.login("User53", "Userpass123");
         BrowserUtils.sleep(2);
+        Assert.assertTrue(dashboard.isDisplayed());
     }
 
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String arg) {
-        talk.click();
-        BrowserUtils.sleep(2);
+      // talk.click();
+      //  BrowserUtils.sleep(2);
     }
 
     @Then("the user sees the page title {string}")
     public void the_user_sees_the_page_title(String title) {
-        String expectedTitle = title;
-        String actualTitle = Driver.getDriver().getTitle();
-        BrowserUtils.sleep(2);
-        Assert.assertEquals(expectedTitle, actualTitle);
+     //   String expectedTitle = title;
+     //   String actualTitle = Driver.getDriver().getTitle();
+     //   BrowserUtils.sleep(2);
+     //   Assert.assertEquals(expectedTitle, actualTitle);
     }
 
     @When("the user searches through the search box")
