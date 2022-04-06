@@ -29,7 +29,7 @@ public class US11_talkModule_stepDefs extends LoginPage {
         BrowserUtils.sleep(2);
         Assert.assertEquals(expectedTitle, actualTitle);
     }
-/*
+
     @When("the user searches through the search box")
     public void the_user_searches_through_the_search_box() {
     }
@@ -45,5 +45,5 @@ public class US11_talkModule_stepDefs extends LoginPage {
     @Then("the user should be able to see the message displayed in the conversation log")
     public void the_user_should_be_able_to_see_the_message_displayed_in_the_conversation_log() {
     }
-*/
+
 }
