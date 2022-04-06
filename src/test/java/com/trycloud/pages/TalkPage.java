@@ -3,9 +3,9 @@ package com.trycloud.pages;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class FilesPageUS11 {
+public class TalkPage {
 
-    public FilesPageUS11() {
+    public TalkPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 }
