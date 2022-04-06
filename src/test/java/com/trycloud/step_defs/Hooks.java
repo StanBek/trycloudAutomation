@@ -9,7 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
 
     //import from io.cucumber.java not from junit
-    @Before (order = 1)
+   /* @Before (order = 1)
     public void setupScenario(){
 
     }
@@ -22,7 +22,7 @@ public class Hooks {
     @Before (value = "@db", order = 0)
     public void setupForDatabaseScenarios(){
         System.out.println("====this will only apply to scenarios with @db tag");
-    }
+    }*/
 
     @After
     public void teardownScenario(Scenario scenario) {
@@ -34,7 +34,7 @@ public class Hooks {
        Driver.close();
     }
 
-    @BeforeStep
+   /* @BeforeStep
     public void setupStep(){
         System.out.println("--------> applying setup using @BeforeStep");
     }
@@ -42,7 +42,7 @@ public class Hooks {
     @AfterStep
     public void afterStep(){
         System.out.println("--------> applying tearDown using @AfterStep");
-    }
+    }*/
 
 
 }

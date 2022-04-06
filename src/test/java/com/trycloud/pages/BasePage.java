@@ -1,9 +1,16 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.sql.rowset.BaseRowSet;
 
 public abstract class BasePage {
 
@@ -85,6 +92,13 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//div[@class='logo logo-icon']")
     public WebElement tryCloudTab;
+
+    public void clickModule(String moduleName) {
+        String locator = "//ul[@id='appmenu']//span[normalize-space(.)='"+moduleName+"']/..";
+        Driver.getDriver().findElement(By.xpath(locator)).click();
+
+
+    }
 
 
 }
