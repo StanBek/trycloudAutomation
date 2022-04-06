@@ -24,7 +24,7 @@ public class US11_talk_module_step_defs extends TalkPage {
 
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_talk_module(String string) {
-        BrowserUtils.waitForVisibility(talk, 3);
+        BrowserUtils.sleep(3);
         talk.click();
 
     }
