@@ -12,5 +12,5 @@ public class TalkPage extends LoginPage {
     }
 
     @FindBy(xpath = "//*[@id=\"fileList\"]/tr[2]/td[1]/a/span[1]/span")
-    public WebElement Talk;
+    public WebElement talk;
 }
