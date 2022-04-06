@@ -1,5 +1,5 @@
 Feature: As a user, I should be able to access talk module
-
+@wip
   Scenario: verify users can see talk module
     Given user is on the Dashboard page
     When the user clicks the Talk module
