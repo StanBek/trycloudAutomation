@@ -14,18 +14,17 @@ public class US11 extends LoginPage {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
-
-        DashboardPage dashboardPage=new DashboardPage();
     }
 
     @When("the user clicks the Talk Module")
     public void the_user_clicks_the_talk_module() {
-        new DashboardPage().clicktalk;
+        talk.click();
     }
 
     @Then("the user sees the page title {string}")
     public void the_user_sees_the_page_title(String string) {
         BrowserUtils.sleep(2);
+        String expectedTitle = "Talk - TryCloud";
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }
