@@ -13,7 +13,7 @@ import org.junit.Assert;
 public class US11_talk_module_step_defs extends TalkPage {
 
     String expectedTitle;
-    TalkPage talkPage = new talkPage();
+    TalkPage talkPage = new TalkPage();
 
     @Given("user is on the Dashboard page")
     public void user_is_on_the_dashboard_page() {
