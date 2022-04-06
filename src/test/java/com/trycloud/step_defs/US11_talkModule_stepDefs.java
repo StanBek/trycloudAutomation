@@ -12,7 +12,7 @@ public class US11_talkModule_stepDefs extends LoginPage {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
-        dashboard.click();
+        dashboard.isDisplayed();
         BrowserUtils.sleep(2);
     }
 
