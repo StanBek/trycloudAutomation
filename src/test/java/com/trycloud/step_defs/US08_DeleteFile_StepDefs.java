@@ -51,8 +51,6 @@ public class US08_DeleteFile_StepDefs extends BasePage {
                 break;
             }
         }
-
-
     }
 
     @Then("Verify the deleted file is displayed on the page")
