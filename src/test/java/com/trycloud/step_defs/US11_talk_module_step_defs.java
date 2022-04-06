@@ -1,13 +1,15 @@
 package com.trycloud.step_defs;
 
+import com.trycloud.pages.BasePage;
 import com.trycloud.pages.LoginPage;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class US11_talk_module_step_defs {
+public class US11_talk_module_step_defs extends BasePage {
 
     @Given("user is on the Dashboard page")
     public void user_is_on_the_dashboard_page() {
@@ -17,6 +19,8 @@ public class US11_talk_module_step_defs {
     }
     @When("the user clicks the Talk module")
     public void the_user_clicks_the_talk_module() {
+        BrowserUtils.waitForVisibility(talk, 2);
+        talk.click();
 
     }
     @Then("verify the title is {string}")
