@@ -1,12 +1,16 @@
 package com.trycloud.step_defs;
 
 import com.trycloud.pages.DashboardPage;
+import com.trycloud.pages.LoginPage;
 import com.trycloud.pages.TalkPage;
+import com.trycloud.utilities.BrowserUtils;
+import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
-public class US11 extends TalkPage {
+public class US11 extends LoginPage {
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
@@ -16,10 +20,14 @@ public class US11 extends TalkPage {
 
     @When("the user clicks the Talk Module")
     public void the_user_clicks_the_talk_module() {
+        new DashboardPage().clicktalk;
     }
 
     @Then("the user sees the page title {string}")
     public void the_user_sees_the_page_title(String string) {
+        BrowserUtils.sleep(2);
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
 
     @When("the user searches through the search box")

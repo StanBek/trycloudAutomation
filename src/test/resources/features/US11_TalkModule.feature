@@ -5,7 +5,7 @@ Feature: As a user I should be able to access the Talk Module
 
     Scenario:Verify that user can access Talks Module
     When the user clicks the Talk Module
-      Then the user sees the page title "Talk - TryCloud QA"
+      Then the user sees the page title "Talk - TryCloud"
 
       Scenario: Verify that user can send a message
         When the user clicks the Talk Module
