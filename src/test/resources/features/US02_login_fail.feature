@@ -3,7 +3,7 @@ Feature: As a user, I should be able to login to TryCloud app
 
   Background:
     Given user on the login page
-  @us_02
+  @us_02 @wip
   Scenario Outline: verify user login fail with invalid credentials "<username>"
     When user enter valid "<username>" and "<password>"
     And  user click login button
